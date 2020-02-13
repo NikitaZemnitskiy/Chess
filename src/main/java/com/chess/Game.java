@@ -1,44 +1,48 @@
 package com.chess;
-
 import com.chess.figures.Figure;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Scanner;
+
 
 @Slf4j
+@Getter
 public class Game {
-    private Figure[][] STANDART_ARRANGEMENT;
+    private Board board;
+    private boolean isWhiteNow = true;
 
-    public Game(Figure[][] STANDART_ARRANGEMENT) {
-        this.STANDART_ARRANGEMENT = STANDART_ARRANGEMENT;
+    public Game(Board board) {
+        this.board = board;
     }
 
-    public void start(){
-        Scanner scanner = new Scanner(System.in);
-        Board board = new Board(STANDART_ARRANGEMENT);
-        while (true){
-            String lastPosition = scanner.nextLine();
-            Position position1 = new Position(lastPosition.charAt(0),Integer.parseInt(String.valueOf(lastPosition.charAt(1))));
-            String newPosition = scanner.nextLine();
-            Position position2 = new Position(newPosition.charAt(0),Integer.parseInt(String.valueOf(newPosition.charAt(1))));
-            if(!board.makeTurn(position1,position2)){
-                log.info("Wrong turn");
-                continue;
-            }
-            else {
-                log.info("You made turn");
-            }
-            board.drow();
-            int lose = board.anybodyLose();
-            if (board.anybodyLose() == -1){
-                log.info("White won!!");
-                break;
-            }
-            if (board.anybodyLose() == 1){
-                log.info("Black won!!");
-                break;
-            }
+    public boolean makeTurn(Position position1, Position position2){
+        if (board.getFigures()[position1.getVertical()][position1.getIntHorizontal()] == null){
+            log.debug("Turn is impossible.Position 1 don't have a figure");
+            return false;
         }
 
+        //Position 1 and position 2 are the same color
+        if(board.getFigures()[position2.getVertical()][position2.getIntHorizontal()] != null){
+            if (board.getFigures()[position1.getVertical()][position1.getIntHorizontal()].getColor() ==
+                    board.getFigures()[position2.getVertical()][position2.getIntHorizontal()].getColor()){
+                log.debug("Turn is impossible. Position 1 and position 2 have the same color figures");
+                return false;
+            }
+        }
+        if (!board.getFigures()[position1.getVertical()][position1.getIntHorizontal()]
+                .isPossible(position1,position2, board.getFigures())){
+            log.debug("Turn is impossible.");
+            return false;
+        }
+        if(! (board.getFigures()[position1.getVertical()][position1.getIntHorizontal()].getColor() == Color.BLACK ^ isWhiteNow)){
+            log.info("Now is not your turn");
+            return false;
+        }
+        log.debug("Turn is Possible");
+        isWhiteNow = !isWhiteNow;
+        Figure figureBuff = board.getFigures()[position1.getVertical()][position1.getIntHorizontal()];
+        board.getFigures()[position1.getVertical()][position1.getIntHorizontal()] = null;
+        board.getFigures()[position2.getVertical()][position2.getIntHorizontal()] = figureBuff;
+        return true;
     }
 }

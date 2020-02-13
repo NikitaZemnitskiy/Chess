@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa35e957-46be-441a-b202-25bea7beeb5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chess/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chess/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chess/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chess/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chess/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chess/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chess/Test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/chess/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/chess/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Chess.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chess/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chess/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chess/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chess/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chess/figures/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chess/figures/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/chess/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/chess/BoardTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +30,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="HTML File" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -36,14 +52,16 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../StolenChess/java-chess" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Spring/demo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -96,22 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BishopTest.isPossibleMoveFromD4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Chess" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chess.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.chess.figures" />
-      <option name="MAIN_CLASS_NAME" value="com.chess.figures.BishopTest" />
-      <option name="METHOD_NAME" value="isPossibleMoveFromD4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BishopTest.isPossibleMoveFromD4WithOtherFigures" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Chess" />
       <extension name="coverage">
@@ -144,13 +146,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/Chess/com/chess/web/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.Test" />
         <item itemvalue="JUnit.QueenTest.isPossibleMoveFromD4" />
         <item itemvalue="JUnit.BishopTest.isPossibleMoveFromD4WithOtherFigures" />
-        <item itemvalue="JUnit.BishopTest.isPossibleMoveFromD4" />
       </list>
     </recent_temporary>
   </component>
@@ -164,15 +168,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580907722803</updated>
+      <workItem from="1581275873035" duration="112000" />
+      <workItem from="1581275996437" duration="210000" />
+      <workItem from="1581276219566" duration="834000" />
+      <workItem from="1581604618515" duration="8862000" />
+      <workItem from="1581628082985" duration="2873000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

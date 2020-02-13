@@ -1,47 +1,37 @@
 package com.chess;
 
+import com.chess.boardRep.StandartBoard;
 import com.chess.figures.*;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.Scanner;
+@Slf4j
 public class Application {
-    private static final Figure[][] STANDART_ARRANGEMENT = new Figure[9][9];
+
     public static void main(String[] args) {
-        STANDART_ARRANGEMENT[1][1] = new Rook(Color.WHITE);
-        STANDART_ARRANGEMENT[1][2] = new Knight(Color.WHITE);
-        STANDART_ARRANGEMENT[1][3] = new Bishop(Color.WHITE);
-        STANDART_ARRANGEMENT[1][4] = new Queen(Color.WHITE);
-        STANDART_ARRANGEMENT[1][5] = new King(Color.WHITE);
-        STANDART_ARRANGEMENT[1][6] = new Bishop(Color.WHITE);
-        STANDART_ARRANGEMENT[1][7] = new Knight(Color.WHITE);
-        STANDART_ARRANGEMENT[1][8] = new Rook(Color.WHITE);
 
-        STANDART_ARRANGEMENT[2][1] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][2] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][3] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][4] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][5] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][6] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][7] = new Pawn(Color.WHITE);
-        STANDART_ARRANGEMENT[2][8] = new Pawn(Color.WHITE);
+        Game game = new Game(StandartBoard.getStandartBoard());
+        Scanner scanner = new Scanner(System.in);
+        Position position1;
+        Position position2;
+        while (true) {
+            game.getBoard().drow();
+            try {
+                String lastPosition = scanner.nextLine();
+                position1 = new Position(lastPosition.charAt(0),Integer.parseInt(String.valueOf(lastPosition.charAt(1))));
+                String newPosition = scanner.nextLine();
+               position2 = new Position(newPosition.charAt(0),Integer.parseInt(String.valueOf(newPosition.charAt(1))));
+            }
+            catch (IllegalStateException e){
+                System.out.println("Incorrect input");
+                continue;
+            }
+                if (!game.makeTurn(position1, position2)){
+                    System.out.println("Wrong turn");
+                    continue;
+                }
 
-        STANDART_ARRANGEMENT[8][1] = new Rook(Color.BLACK);
-        STANDART_ARRANGEMENT[8][2] = new Knight(Color.BLACK);
-        STANDART_ARRANGEMENT[8][3] = new Bishop(Color.BLACK);
-        STANDART_ARRANGEMENT[8][4] = new King(Color.BLACK);
-        STANDART_ARRANGEMENT[8][5] = new Queen(Color.BLACK);
-        STANDART_ARRANGEMENT[8][6] = new Bishop(Color.BLACK);
-        STANDART_ARRANGEMENT[8][7] = new Knight(Color.BLACK);
-        STANDART_ARRANGEMENT[8][8] = new Rook(Color.BLACK);
-
-        STANDART_ARRANGEMENT[7][1] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][2] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][3] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][4] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][5] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][6] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][7] = new Pawn(Color.BLACK);
-        STANDART_ARRANGEMENT[7][8] = new Pawn(Color.BLACK);
-        Game game = new Game(STANDART_ARRANGEMENT);
-        game.start();
+        }
     }
 
 }
